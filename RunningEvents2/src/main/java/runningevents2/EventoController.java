@@ -18,11 +18,6 @@ class EventoController {
     @Autowired
     private EventoService eventoService;
     
-    @RequestMapping("/eventos")
-    public List<Evento> getEventos(Evento evento){
-        return eventoService.getEventos(evento);
-    }
-    
     @RequestMapping("/eventos/{data}")
     public List<Evento> getEventosByData(@PathVariable String data){
         return eventoService.getEventosByData(data);
@@ -32,4 +27,6 @@ class EventoController {
     public void createEvento(@RequestBody Evento evento) {
         eventoService.createEvento(evento);
     }
+    
+    
 }

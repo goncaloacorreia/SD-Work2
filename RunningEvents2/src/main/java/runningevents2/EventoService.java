@@ -11,11 +11,6 @@ public class EventoService {
     @Autowired
     private EventoRepository repository;
     
-    public List<Evento> getEventos(Evento evento){
-        List<Evento> eventos = new ArrayList<>();
-        repository.findAll().forEach(eventos::add);
-        return eventos;
-    }
     public List<Evento> getEventosByData(String data){
         List<Evento> eventos = new ArrayList<>();
         repository.findByData(data).forEach(eventos::add);
